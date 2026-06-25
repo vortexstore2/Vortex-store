@@ -159,13 +159,14 @@
   }
   .product-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   
-  /* UKURAN GAMBAR GRID MENU */
+  /* UKURAN BINGKAI GAMBAR */
   .product-img {
     height: 120px; 
     display: flex; align-items: center; justify-content: center;
     background: var(--surface2);
     overflow: hidden;
   }
+  /* STYLING GAMBAR AGAR PAS DI KARTU MENU */
   .product-img img {
     width: 100%;
     height: 100%;
@@ -442,7 +443,7 @@
 </div>
 
 <script>
-// DAFTAR PRODUK YANG SUDAH SESUAI DENGAN GAMBAR ASLI KULINER INDONESIA
+// ARRAY YANG SUDAH DITAMBAHKAN LINK GAMBAR NYATA SESUAI MENU
 const PRODUCTS = [
   { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'https://images.unsplash.com/photo-1615886753862-35f377e84355?q=80&w=500&auto=format&fit=crop', emoji:'🍳' },
   { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=500&auto=format&fit=crop', emoji:'🍜' },
@@ -505,6 +506,7 @@ function setCat(cat, btn) {
 
 function filterProducts() { renderProducts(); }
 
+// RENDER MENGGUNAKAN ELEMEN <img> DENGAN LINK DARI ARRAY
 function renderProducts() {
   const q = document.getElementById('search-inp').value.toLowerCase();
   const filtered = PRODUCTS.filter(p =>
