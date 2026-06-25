@@ -159,7 +159,6 @@
   }
   .product-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   
-  /* PENGATURAN AREA GAMBAR PRODUK */
   .product-img {
     height: 120px; 
     overflow: hidden;
@@ -171,7 +170,7 @@
   .product-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Menghindari gambar gepeng saat ditarik */
+    object-fit: cover;
   }
 
   .product-info { padding: 12px; }
@@ -219,7 +218,6 @@
     border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px;
   }
   
-  /* GAMBAR MINI DI DALAM KERANJANG BELANJA */
   .cart-item-img { 
     width: 45px; 
     height: 45px; 
@@ -458,13 +456,13 @@
 </div>
 
 <script>
-// DATA PRODUK DENGAN URL GAMBAR ASLI DARI INTERNET
+// DATA PRODUK DENGAN URL GAMBAR AKTIF & STABIL
 const PRODUCTS = [
-  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'http://googleusercontent.com/image_collection/image_retrieval/4319658884710410503_0' },
+  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'http://googleusercontent.com/image_collection/image_retrieval/16885231003265169623' },
   { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=400&auto=format&fit=crop' },
   { id:3, name:'Ayam Geprek Sambal', cat:'Makanan', price:17000, img:'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=400&auto=format&fit=crop' },
   { id:4, name:'Soto Ayam Komplit', cat:'Makanan', price:14000, img:'https://images.unsplash.com/photo-1626804475315-9004d80ad61a?q=80&w=400&auto=format&fit=crop' },
-  { id:5, name:'Gado-gado Kacang', cat:'Makanan', price:12000, img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop' },
+  { id:5, name:'Gado-gado Kacang', cat:'Makanan', price:12000, img:'http://googleusercontent.com/image_collection/image_retrieval/16885231003265169623' },
   { id:6, name:'Es Teh Manis', cat:'Minuman', price:4000, img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=400&auto=format&fit=crop' },
   { id:7, name:'Jus Alpukat', cat:'Minuman', price:8000, img:'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?q=80&w=400&auto=format&fit=crop' },
   { id:8, name:'Es Kopi Susu', cat:'Minuman', price:9000, img:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=400&auto=format&fit=crop' },
@@ -532,7 +530,6 @@ function renderProducts() {
     el.innerHTML = '<p style="color:var(--muted);font-size:14px;grid-column:1/-1;padding:32px 0;text-align:center;">Tidak ada menu yang cocok 😕</p>';
     return;
   }
-  // MENGUBAH ELEMENT MENJADI TAG <img>
   el.innerHTML = filtered.map(p => `
     <div class="product-card">
       <div class="product-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
@@ -568,7 +565,6 @@ function renderCartItems() {
     return;
   }
   let total = 0;
-  // MENAMPILKAN THUMBNAIL GAMBAR KECIL JUGA DI LIST KERANJANG
   el.innerHTML = keys.map(id => {
     const p = PRODUCTS.find(x => x.id == id);
     const sub = p.price * cart[id];
