@@ -159,7 +159,7 @@
   }
   .product-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   
-  /* UKURAN GAMBAR DIPERBARUI AGAR PAS DI DALAM KARTU MENU */
+  /* UKURAN GAMBAR GRID MENU */
   .product-img {
     height: 120px; 
     display: flex; align-items: center; justify-content: center;
@@ -442,15 +442,15 @@
 </div>
 
 <script>
-// ARRAY YANG SUDAH DITAMBAHKAN LINK GAMBAR NYATA
+// DAFTAR PRODUK YANG SUDAH SESUAI DENGAN GAMBAR ASLI KULINER INDONESIA
 const PRODUCTS = [
-  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=500&auto=format&fit=crop', emoji:'🍳' },
-  { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=500&auto=format&fit=crop', emoji:'🍜' },
-  { id:3, name:'Ayam Geprek Sambal', cat:'Makanan', price:17000, img:'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=500&auto=format&fit=crop', emoji:'🍗' },
-  { id:4, name:'Soto Ayam Komplit', cat:'Makanan', price:14000, img:'https://images.unsplash.com/photo-1626804475315-76916c278e35?q=80&w=500&auto=format&fit=crop', emoji:'🥣' },
-  { id:5, name:'Gado-gado Bumbu Kacang', cat:'Makanan', price:12000, img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop', emoji:'🥗' },
+  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'https://images.unsplash.com/photo-1615886753862-35f377e84355?q=80&w=500&auto=format&fit=crop', emoji:'🍳' },
+  { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=500&auto=format&fit=crop', emoji:'🍜' },
+  { id:3, name:'Ayam Geprek Sambal', cat:'Makanan', price:17000, img:'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=500&auto=format&fit=crop', emoji:'🍗' },
+  { id:4, name:'Soto Ayam Komplit', cat:'Makanan', price:14000, img:'https://images.unsplash.com/photo-1604495924535-649069d255f0?q=80&w=500&auto=format&fit=crop', emoji:'🥣' },
+  { id:5, name:'Gado-gado Bumbu Kacang', cat:'Makanan', price:12000, img:'https://images.unsplash.com/photo-1601356627027-2489c09533f5?q=80&w=500&auto=format&fit=crop', emoji:'🥗' },
   { id:6, name:'Es Teh Manis', cat:'Minuman', price:4000, img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=500&auto=format&fit=crop', emoji:'🧋' },
-  { id:7, name:'Jus Alpukat', cat:'Minuman', price:8000, img:'https://images.unsplash.com/photo-1541658016709-82535e94bc69?q=80&w=500&auto=format&fit=crop', emoji:'🥑' },
+  { id:7, name:'Jus Alpukat', cat:'Minuman', price:8000, img:'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=500&auto=format&fit=crop', emoji:'🥑' },
   { id:8, name:'Es Kopi Susu', cat:'Minuman', price:9000, img:'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500&auto=format&fit=crop', emoji:'☕' },
   { id:9, name:'Air Mineral Botol', cat:'Minuman', price:3000, img:'https://images.unsplash.com/photo-1608885898957-a599fb1698d6?q=80&w=500&auto=format&fit=crop', emoji:'💧' },
   { id:10, name:'Pisang Goreng Crispy', cat:'Snack', price:6000, img:'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=500&auto=format&fit=crop', emoji:'🍌' },
@@ -505,7 +505,6 @@ function setCat(cat, btn) {
 
 function filterProducts() { renderProducts(); }
 
-// FUNGSI RENDER SUDAH MENGGUNAKAN TAG IMG UNTUK MENAMPILKAN GAMBAR
 function renderProducts() {
   const q = document.getElementById('search-inp').value.toLowerCase();
   const filtered = PRODUCTS.filter(p =>
