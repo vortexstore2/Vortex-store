@@ -17,11 +17,9 @@ Proyek: Aplikasi Mobile Kantin Pintar Kampus (Vortex Store)
 
 1. SOP Code Review
 
-Tujuan
-Code review dilakukan untuk menjaga kualitas kode dan saling belajar — **bukan** untuk menyalahkan atau menjatuhkan anggota lain. Kritik diarahkan ke kode, bukan ke orangnya.
 
 Aturan Umum
-1. Setiap *pull request* (PR) wajib di-review oleh minimal **1 anggota lain** sebelum di-*merge* ke branch utama (`main`).
+1. Setiap *pull request* wajib di-review oleh minimal **1 anggota lain** sebelum di-*merge* ke branch utama .
 2. Review diberikan dalam waktu maksimal **24 jam** setelah PR dibuka, agar tidak menghambat progres tim.
 3. Gunakan kolom *comment* di GitHub untuk diskusi teknis — hindari membahas kesalahan kode lewat chat pribadi atau grup, supaya ada jejak diskusi yang bisa dilihat semua orang.
 4. Jika menemukan kesalahan, **jelaskan alasannya** dan beri **saran solusi**, jangan hanya menyalahkan.
@@ -40,7 +38,7 @@ Contoh Kalimat: Dilarang vs Dianjurkan
 Proses Review Singkat
 1. Buat PR dengan deskripsi singkat: apa yang diubah & kenapa.
 2. Tag minimal 1 anggota lain untuk review.
-3. Reviewer beri komentar (jika ada perbaikan) atau approve.
+3. Reviewer beri komentar atau approve.
 4. Penulis kode merespons/memperbaiki sesuai komentar.
 5. Setelah disetujui, PR boleh di-*merge*.
 
@@ -56,13 +54,13 @@ Jam Kerja & Batas Komunikasi
 Kanal Komunikasi
 | Kebutuhan | Kanal |
 |---|---|
-| Diskusi teknis terkait kode | Komentar di GitHub PR/Issue |
-| Koordinasi harian & info cepat | Grup chat tim (WhatsApp/Discord) |
+| Diskusi teknis terkait kode | Komentar di  |
+| Koordinasi harian & info cepat | Grup chat tim (WhatsApp 088225370995|
 | Laporan progres ke Product Owner | Ringkasan tertulis di akhir setiap stand-up |
 | Darurat (sistem down) | Chat langsung + tag semua anggota, boleh di luar jam kerja |
 
 Update Harian (Daily Stand-up)
-- Dilakukan setiap hari, maksimal 15 menit (boleh lewat chat singkat jika tidak bisa video call).
+- Dilakukan setiap hari, maksimal 15 menit.
 - Setiap anggota menjawab 3 hal:
   1. Apa yang dikerjakan kemarin?
   2. Apa yang akan dikerjakan hari ini?
@@ -76,13 +74,13 @@ Jika terjadi error kritis yang menghentikan progres (misalnya server down, build
 
 ---
 
-3. Kesepakatan Khusus: Kontrak Data (Anti Konflik JSON)
+3. Kesepakatan Khusus: Kontrak Data 
 
-Karena konflik utama tim sebelumnya adalah format data JSON yang berubah-ubah tanpa komunikasi, tim ini sepakat:
+Karena konflik utama tim sebelumnya adalah format data yang berubah-ubah tanpa komunikasi, tim ini sepakat:
 
-1. Format JSON setiap endpoint **didokumentasikan tertulis** sebelum endpoint dikerjakan (lihat dokumentasi API di Deliverable A).
+1. Format setiap endpoint **didokumentasikan tertulis** sebelum endpoint dikerjakan .
 2. Jika ada perubahan format data di tengah jalan, **wajib diinfokan ke grup tim** dan didiskusikan dulu — tidak boleh diubah sepihak.
-3. Perubahan kontrak API yang sudah disepakati harus diperbarui juga di dokumentasinya, bukan hanya di kode.
+3. Perubahan kontrak API yang sudah disepakati harus diperbarui juga di dokumentasinya.
 
 ---
 
@@ -90,8 +88,8 @@ Karena konflik utama tim sebelumnya adalah format data JSON yang berubah-ubah ta
 
 Dengan menandatangani (mencantumkan nama) di bawah, setiap anggota sepakat untuk mengikuti SOP Code Review dan Protokol Komunikasi di atas selama proyek berlangsung.
 
-| Nama | Tanda Tangan / Konfirmasi |
+| Nama | Konfirmasi |
 |---|---|
-| Adit | [ ] Setuju |
-| Dafa | [ ] Setuju |
-| Brigga | [ ] Setuju |
+| Adit  |  Setuju |
+| Dafa  |  Setuju |
+| Brigga | Setuju |
