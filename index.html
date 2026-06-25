@@ -159,13 +159,12 @@
   }
   .product-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   
+  /* UKURAN GAMBAR DIPERBARUI AGAR PAS DI DALAM KARTU MENU */
   .product-img {
     height: 120px; 
-    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
     background: var(--surface2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
   .product-img img {
     width: 100%;
@@ -217,20 +216,7 @@
     padding: 12px; background: var(--surface2);
     border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px;
   }
-  
-  .cart-item-img { 
-    width: 45px; 
-    height: 45px; 
-    border-radius: 8px; 
-    overflow: hidden; 
-    flex-shrink: 0; 
-  }
-  .cart-item-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+  .cart-item-emoji { font-size: 28px; flex-shrink: 0; }
   .cart-item-info { flex: 1; }
   .cart-item-name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
   .cart-item-price { font-size: 12px; color: var(--accent2); }
@@ -456,20 +442,20 @@
 </div>
 
 <script>
-// DATA PRODUK DENGAN URL GAMBAR AKTIF & STABIL
+// ARRAY YANG SUDAH DITAMBAHKAN LINK GAMBAR NYATA
 const PRODUCTS = [
-  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'http://googleusercontent.com/image_collection/image_retrieval/16885231003265169623' },
-  { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=400&auto=format&fit=crop' },
-  { id:3, name:'Ayam Geprek Sambal', cat:'Makanan', price:17000, img:'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=400&auto=format&fit=crop' },
-  { id:4, name:'Soto Ayam Komplit', cat:'Makanan', price:14000, img:'https://images.unsplash.com/photo-1626804475315-9004d80ad61a?q=80&w=400&auto=format&fit=crop' },
-  { id:5, name:'Gado-gado Kacang', cat:'Makanan', price:12000, img:'http://googleusercontent.com/image_collection/image_retrieval/16885231003265169623' },
-  { id:6, name:'Es Teh Manis', cat:'Minuman', price:4000, img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=400&auto=format&fit=crop' },
-  { id:7, name:'Jus Alpukat', cat:'Minuman', price:8000, img:'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?q=80&w=400&auto=format&fit=crop' },
-  { id:8, name:'Es Kopi Susu', cat:'Minuman', price:9000, img:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=400&auto=format&fit=crop' },
-  { id:9, name:'Air Mineral Botol', cat:'Minuman', price:3000, img:'https://images.unsplash.com/photo-1608885898957-a599fb18de36?q=80&w=400&auto=format&fit=crop' },
-  { id:10, name:'Pisang Goreng Crispy', cat:'Snack', price:6000, img:'https://images.unsplash.com/photo-1566843972142-a7fcb70de55a?q=80&w=400&auto=format&fit=crop' },
-  { id:11, name:'Tahu Tempe Goreng', cat:'Snack', price:5000, img:'https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=400&auto=format&fit=crop' },
-  { id:12, name:'Kerupuk Udang', cat:'Snack', price:4000, img:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=400&auto=format&fit=crop' },
+  { id:1, name:'Nasi Goreng Spesial', cat:'Makanan', price:15000, img:'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=500&auto=format&fit=crop', emoji:'🍳' },
+  { id:2, name:'Mie Ayam Bakso', cat:'Makanan', price:13000, img:'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=500&auto=format&fit=crop', emoji:'🍜' },
+  { id:3, name:'Ayam Geprek Sambal', cat:'Makanan', price:17000, img:'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=500&auto=format&fit=crop', emoji:'🍗' },
+  { id:4, name:'Soto Ayam Komplit', cat:'Makanan', price:14000, img:'https://images.unsplash.com/photo-1626804475315-76916c278e35?q=80&w=500&auto=format&fit=crop', emoji:'🥣' },
+  { id:5, name:'Gado-gado Bumbu Kacang', cat:'Makanan', price:12000, img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop', emoji:'🥗' },
+  { id:6, name:'Es Teh Manis', cat:'Minuman', price:4000, img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=500&auto=format&fit=crop', emoji:'🧋' },
+  { id:7, name:'Jus Alpukat', cat:'Minuman', price:8000, img:'https://images.unsplash.com/photo-1541658016709-82535e94bc69?q=80&w=500&auto=format&fit=crop', emoji:'🥑' },
+  { id:8, name:'Es Kopi Susu', cat:'Minuman', price:9000, img:'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500&auto=format&fit=crop', emoji:'☕' },
+  { id:9, name:'Air Mineral Botol', cat:'Minuman', price:3000, img:'https://images.unsplash.com/photo-1608885898957-a599fb1698d6?q=80&w=500&auto=format&fit=crop', emoji:'💧' },
+  { id:10, name:'Pisang Goreng Crispy', cat:'Snack', price:6000, img:'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=500&auto=format&fit=crop', emoji:'🍌' },
+  { id:11, name:'Tahu Tempe Goreng', cat:'Snack', price:5000, img:'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=500&auto=format&fit=crop', emoji:'🧆' },
+  { id:12, name:'Kerupuk Udang', cat:'Snack', price:4000, img:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=500&auto=format&fit=crop', emoji:'🦐' }
 ];
 
 let cart = {};
@@ -519,6 +505,7 @@ function setCat(cat, btn) {
 
 function filterProducts() { renderProducts(); }
 
+// FUNGSI RENDER SUDAH MENGGUNAKAN TAG IMG UNTUK MENAMPILKAN GAMBAR
 function renderProducts() {
   const q = document.getElementById('search-inp').value.toLowerCase();
   const filtered = PRODUCTS.filter(p =>
@@ -532,7 +519,9 @@ function renderProducts() {
   }
   el.innerHTML = filtered.map(p => `
     <div class="product-card">
-      <div class="product-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+      <div class="product-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+      </div>
       <div class="product-info">
         <div class="product-name">${p.name}</div>
         <div class="product-cat">${p.cat}</div>
@@ -571,7 +560,7 @@ function renderCartItems() {
     total += sub;
     return `
       <div class="cart-item">
-        <div class="cart-item-img"><img src="${p.img}" alt="${p.name}"></div>
+        <span class="cart-item-emoji">${p.emoji}</span>
         <div class="cart-item-info">
           <div class="cart-item-name">${p.name}</div>
           <div class="cart-item-price">${fmt(p.price)} × ${cart[id]} = ${fmt(sub)}</div>
@@ -614,7 +603,7 @@ function goToPayment() {
     const p = PRODUCTS.find(x => x.id == id);
     const sub = p.price * cart[id];
     total += sub;
-    return `<div class="order-line"><span>📦 ${p.name} ×${cart[id]}</span><span>${fmt(sub)}</span></div>`;
+    return `<div class="order-line"><span>${p.emoji} ${p.name} ×${cart[id]}</span><span>${fmt(sub)}</span></div>`;
   }).join('');
   document.getElementById('order-lines').innerHTML = lines;
   document.getElementById('pay-total').textContent = fmt(total);
